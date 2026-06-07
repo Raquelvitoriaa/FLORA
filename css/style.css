@@ -1,1 +1,19 @@
+:root{
+    --vermelho:
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Verdade, Geneva, Thomas, sans-serif;
+    outline: none;
+    boder:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
 
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
