@@ -2,12 +2,11 @@
     --vermelho:
 }
 *{
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: Verdade, Geneva, Thomas, sans-serif;
-    outline: none;
-    boder:none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none; boder: none;
     text-decoration: none;
     text-transform: capitalize;
     transition: .2s linear;
@@ -22,8 +21,8 @@ html{
 
 header{
    position: fixed;
-   top:0; left0;right:0;
-   background: #FFFFFF
+   top:0; left:0;right:0;
+   background: #FFF
    padding: 2rem 9%;
    display: flex;
    aling_items: center;
