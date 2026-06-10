@@ -147,8 +147,9 @@ Adicione aqui screenshots do projeto:
 
 ## 👩‍💻 Desenvolvedores
 
-**Raquel Vitória**
-**Gabrielly Ariely**
+| **Raquel Vitória**
+|
+| **Gabrielly Ariely**
 
 ### GitHub
 
