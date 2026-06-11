@@ -62,24 +62,7 @@ O projeto simula uma marca premium de cosméticos focada em skincare, maquiagem 
 
 ## 📂 Estrutura de Pastas
 
-```bash
-FLORA/
-│
-├── index.html
-│
-├── css/
-│   └── style.css
-│
-├── imagens/
-│   ├── hero-model.png
-│   ├── serum.jpg
-│   ├── creme.jpg
-│   ├── gloss.jpg
-│   └── perfume.jpg
-│
-└── assets/
-    └── logo-flora.svg
-```
+
 
 ---
 
