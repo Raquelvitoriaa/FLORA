@@ -1,0 +1,24 @@
+:root{
+    --color-neutral-0:#ffffff;
+    --color-neutral-1:#fff0ec;
+    --color-neutral-2:#fdf0ed;
+    --color-neutral-3:#ffccd5;
+    --color-neutral-4:#f7a89b;
+    --color-neutral-5:#cccccc;
+    --color-neutral-6:#999999;
+    --color-neutral-7:#666666;
+    --color-neutral-8:#333333;
+    --color-neutral-9:#1e0e05;
+    --color-neutral-10:#000000;
+    --color-neutral-11:#da7157;
+    --color-neutral-12:#b65a3f;
+
+    --color-primary-1:#424242;
+    --color-primary-2:#ffa488;
+    --color-primary-3:#fdeaea;
+
+    --color-secondary-1:#fff0ec;
+    --color-secondary-2:#ab3000;
+    --color-secondary-3:#e7967f;
+    --color-secondary-3:#212121;
+}
