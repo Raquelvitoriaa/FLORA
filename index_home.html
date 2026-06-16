@@ -1,0 +1,701 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>FLORA</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght=0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        /*FONTES E VARÍAVEIS*/
+        :root{
+            --color-neutral-0:#ffffff;
+            --color-neutral-1:#fff0ec;
+            --color-neutral-2:#fdf0ed;
+            --color-neutral-3:#ffccd5;
+            --color-neutral-4:#f7a89b;
+            --color-neutral-5:#cccccc;
+            --color-neutral-6:#999999;
+            --color-neutral-7:#666666;
+            --color-neutral-8:#333333;
+            --color-neutral-9:#1e0e05;
+            --color-neutral-10:#000000;
+            --color-neutral-11:#da7157;
+            --color-neutral-12:#b65a3f;
+
+            --color-primary-1:#424242;
+            --color-primary-2:#ffa488;
+            --color-primary-3:#fdeaea;
+
+            --color-secondary-1:#fff0ec;
+            --color-secondary-2:#ab3000;
+            --color-secondary-3:#e7967f;
+            --color-secondary-4:#212121;
+        }
+
+        /*CONFIGURAÇÕES GERAIS / RESET*/
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #container{
+            background-image: url('https://i.pinimg.com/736x/ac/2d/34/ac2d34592398b36f306f6e2e11011f07.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .title{
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            color: var(--color-neutral-10);
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .title::before{
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--color-neutral-12);
+            position: absolute;
+            bottom: 0;
+            border-radius: 30px;
+        }
+
+        a.btn{
+            text-decoration: none;
+        }
+
+        .btn{
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            background-color: transparent;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /*ESTILO BOTÕES*/
+        .btn-mobile{
+            font-size: 1.8rem;
+            color: var(--color-neutral-10);
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+
+        .btn-default{
+            background-color: var(--color-neutral-10);
+            color: var(--color-neutral-1);
+        }
+
+        .btn-default:hover{
+            background-color: var(--color-primary-1);
+            color: var(--color-neutral-0);
+        }
+
+        .btn-outlined{
+            background-color: transparent;
+            color: var(--color-neutral-10);
+            border: 2px solid var(--color-neutral-10);
+        }
+
+        .btn-outlined:hover{
+            background-color: var(--color-neutral-12);
+            color: var(--color-neutral-0);
+        }
+
+        .btn-login {
+            background-color: transparent;
+            color: var(--color-neutral-10);
+            border: 2px solid var(--color-neutral-10);
+            padding: 8px 18px;
+            font-size: 0.95rem;
+            border-radius: 8px;
+        }
+
+        .btn-login:hover {
+            background-color: var(--color-neutral-10);
+            color: var(--color-neutral-0);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /*HEADER, NAVBAR E LOGO*/
+        header{
+            background-color: var(--color-neutral-4);
+            padding: 12px 4%;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            font-size: 2.2rem;
+            color: var(--color-neutral-10);
+        }
+
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--color-neutral-10);
+            text-transform: uppercase;
+        }
+
+        header ul{
+            display: none;
+            list-style: none;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 100%;
+            position: absolute;
+            top: 70px;
+            background-color: var(--color-neutral-4);
+            left: 0;
+            padding: 1.5rem;
+            border-top: 3px solid var(--color-neutral-0);
+        }
+
+        header ul.show{
+            display: flex;
+        }
+
+        header ul li{
+            text-align: center;
+        }
+
+        header ul li a{
+            color: var(--color-neutral-10);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        header ul li a:hover{
+            color: var(--color-neutral-0);
+            border-bottom: 1px solid var(--color-neutral-10);
+        }
+
+        #menu-toggle:checked ~ .navbar ul{
+            display: flex !important;
+        }
+
+        /*Seção home*/
+        #home{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            min-height: calc(100vh - 96px);
+            padding: 32px 4%;
+        }
+
+        #home .home-image{
+            width: clamp(300px, 50%, 400px);
+        }
+
+        #home .perfume-destaque {
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid var(--color-neutral-0);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        #home .home-title{
+            color: var(--color-neutral-9);
+            text-align: center;
+            font-size: clamp(2.2rem, 5vw, 4.3rem);
+            text-transform: uppercase;
+            line-height: 1.2;
+            max-width: 700px;
+        }
+
+        #home .home-title span{
+            color:var(--color-neutral-12);
+        }
+
+        #home .home-description{
+            color: var(--color-neutral-8);
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 500;
+            max-width: 600px;
+        }
+
+        #home .home-actions{
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        /* SEÇÃO TRENDING (MAIS POPULARES) */
+        #trending {
+            padding: 60px 4%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            min-height: calc(100vh - 96px);
+        }
+
+        #trending .trending-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        #trending .trending-cards .trending-card {
+            position: relative;
+            flex: 1 1 250px;
+            max-width: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #trending .trending-cards .trending-card img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        #trending .trending-cards .trending-card .trending-rate {
+            background-color: var(--color-neutral-12);
+            position: absolute;
+            bottom: 65px;
+            right: 15px;
+            padding: 6px 14px;
+            border-radius: 6px;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        #trending .trending-cards .trending-card .trending-card-description {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-neutral-10);
+            margin-top: 15px;
+        }
+
+        /*SEÇÃO ABOUT*/
+        #about {
+            padding: 32px 4%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--color-primary-2);
+            background-image: url('../images/about/img_3-removebg-preview.png');
+            min-height: calc(100vh - 96px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2 );
+            border-radius: 32px;
+            margin: 20px 4%;
+        }
+
+        #about .title{
+            color: var(--color-neutral-10);
+        }
+
+        #about .title::before{
+            background-color: var(--color-secondary-2);
+        }
+
+        #about .about-content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        #about .about-content .about-image{
+            width: clamp(250px, 30vw, 500px);
+        }
+
+        .about-content .perfume-about {
+            width: 300px;
+            height: 300px;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 8px solid var(--color-neutral-0);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        #about .about-content .about-info{
+            padding: 24px;
+            border-radius: 20px;
+            background-color: var(--color-primary-3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #about .about-content .about-info h3{
+            color: var(--color-neutral-10);
+            font-size: 1.8rem;
+            margin-bottom: 4px;
+        }
+
+        #about .about-content .about-info h3 span{
+            color: var(--color-neutral-12);
+        }
+
+        #about .about-content .about-info p{
+            color: var(--color-neutral-10);
+            font-size: 1rem;
+        }
+
+        #about .about-content .about-info p span{
+            color: var(--color-secondary-2);
+            font-weight: 600;
+        }
+
+        /*SEÇÃO PRODUCTS (NOVIDADES)*/
+        #products{
+            padding: 48px 8%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        #products .products-cards{
+            display: flex;
+            flex-direction: column;
+            gap: 58px;
+        }
+
+        #products .products-cards .product-card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-neutral-0);
+            padding: 20px;
+            border-radius: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--color-neutral-3);
+        }
+
+        #products .products-cards .product-card img{
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            position: relative;
+            top: 0;
+            filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
+        }
+
+        #products .products-cards .product-card .product-content{
+           margin-top: 15px;
+           text-align: center;
+           width: 100%;
+        }
+
+        #products .products-cards .product-card .product-content h3{
+            color: var(--color-neutral-10);
+            font-size: 1.4rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        #products .products-cards .product-card .product-content h3 span{
+            color: var(--color-neutral-12);
+            font-size: 1.1rem;
+        }
+
+        /*FOOTER (RODAPÉ)*/
+        footer{
+            background-color: var(--color-neutral-11);
+            color: var(--color-neutral-10);
+            text-align: center;
+            padding: 16px;
+        }
+
+        footer p{
+            font-size: 1rem;
+        }
+
+        /*RESPONSIVIDADE (MEDIA QUERIES)*/
+        @media(max-width: 768px){
+            .header-actions {
+                display: none;
+            }
+        }
+
+        @media(min-width: 769px){
+            header .navbar .btn-mobile{
+                display: none;
+            }
+
+            header .navbar ul{
+                display: flex;
+                flex-direction: row;
+                position: static;
+                gap: 1.5rem;
+                width: auto;
+                padding: 0;
+                box-shadow: none;
+                border-top: none !important;
+            }
+        }
+
+        @media (min-width: 768px){
+            #trending .trending-cards{
+                display: flex;
+                justify-content: center;
+                flex-wrap: nowrap;
+                gap: 24px;
+            }
+
+            #products{
+                min-height: 100vh;
+                gap: 8rem;
+            }
+
+            #products .products-cards{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 30px;
+                flex-wrap: nowrap;
+            }
+
+            #products .products-cards .product-card{
+                width: 280px;
+                height: 320px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                padding: 25px 15px;
+            }
+
+            #products .products-cards .product-card img{
+                width: 100%;
+                height: 190px;
+                object-fit: contain;
+            }
+        }
+
+        @media (min-width: 1200px){
+            #about{
+                margin: 4%;
+                justify-content: center;
+            }
+
+            #about .about-content{
+                flex-direction: row;
+                align-items: center;
+                gap: 48px;
+            }
+            
+            #about .about-image{
+                order: 1;
+            }
+
+            #about .about-info:first-child{
+                order: 2;
+            }
+
+            #about .about-info:last-child{
+                order: 3;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <input type="checkbox" id="menu-toggle" style="display: none;">
+        <nav class="navbar">
+            
+            <div class="logo-container">
+                <i class="logo-icon">🌸</i>
+                <span class="logo-text">FLORA</span>
+            </div>
+
+           <label for="menu-toggle" class="btn-mobile">
+            <i class="fa-solid fa-bars"></i>
+           </label>
+
+            <ul id="navbar-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#trending">Mais Populares</a></li>
+                <li><a href="#about">Conheça a FLORA</a></li>
+                <li><a href="#products">Novidades</a></li>
+            </ul>
+
+            <div class="header-actions">
+                <a href="#Suport-consultora" class="btn btn-default">Falar com consultora</a>
+                <a href="index_login.html" class="btn btn-login">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="container">
+        <section id="home">
+        <img src="https://epocacosmeticos.vteximg.com.br/arquivos/ids/1554845-800-800/17634685527477.jpg?v=639086752030800000" alt="Perfume Flora" class="home-image perfume-destaque">
+        <h1 class="home-title">
+            O autocuidado que
+            <span>você merece.</span>
+        </h1>
+        <p class="home-description">
+            Explore nosso catálogo completo de fragrâncias e maquiagens exclusivas,
+            ou tire suas dúvidas diretamente com o nosso atendimento especializado.
+        </p>
+
+        <div class="home-actions">
+            <a href="#" class="btn btn-default">Ver Catálogo</a>
+            <a href="#" class="btn btn-outlined">Falar com consultora</a>
+        </div>
+       </section>
+
+       <section id="trending">
+        <h2 class="title">Mais Populares</h2>
+
+        <div class="trending-cards">
+            <div class="trending-card">
+                <img src="https://acdn-us.mitiendanube.com/stores/002/857/350/products/imagem-do-whatsapp-de-2024-11-27-as-17-17-50_c455f2c0-703d4ee9fbf1ddf86c17327387754170-1024-1024.webp" alt="Cremes Hidratantes">
+                <div class="trending-rate">
+                    <p>CONFIRA</p>
+                </div>
+                <p class="trending-card-description">Cremes Hidratantes</p>
+            </div>
+
+             <div class="trending-card">
+                <img src="https://a-static.mlcdn.com.br/420x420/love-kit-franciny-ehlke-kit-gloss-fran-lip-combo-fran-by-francine-ehlke/khayup/7898724572780/cfb4639598fc34e3eac0bb0ec3ce6eca.jpeg" alt="Kits Gloss">
+                <div class="trending-rate">
+                    <p>CONFIRA</p>
+                </div>
+                <p class="trending-card-description">Kits Gloss</p>
+            </div>
+
+             <div class="trending-card">
+                <img src="https://burst.shopifycdn.com/photos/makeup-beauty-flatlay.jpg?width=373&format=pjpg&exif=0&iptc=0" alt="Maquiagem">
+                <div class="trending-rate">
+                    <p>CONFIRA</p>
+                </div>
+                <p class="trending-card-description">Maquiagem</p>
+            </div>
+                
+             <div class="trending-card">
+                <img src="https://images.unsplash.com/photo-1712995517346-ece1efd72064?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Perfumes">
+                <div class="trending-rate">
+                    <p>CONFIRA</p>
+                </div>
+                <p class="trending-card-description">Perfumes</p>
+            </div>
+        </div>
+       </section>
+        
+       <section id="about">
+        <h2 class="title">Conheça a FLORA</h2>
+
+        <div class="about-content">
+            <img src="https://i.pinimg.com/736x/f0/1e/4c/f01e4c855e5343ef83e1c41625c21b42.jpg" alt="Logo Perfume_FLORA" class="about-image perfume-about">
+
+            <div class="about-info">
+                <h3>Nossa <span>Essência</span></h3>
+                <p>
+                   Desde o início, nossa paixão pela beleza e bem-estar nos inspira 
+                   a reunir as melhores solutions para a sua rotina de cuidados diários. 
+                   Com uma <span>curadoria premium</span> que envolve alta perfumaria, 
+                   maquiagens icônicas e cremes hidratantes de alta tecnologia, buscamos 
+                   unir luxo, sofisticação e um verdadeiro sentimento de 
+                   <span>acolhimento</span> em um só lugar. 
+                   Aqui, cada produto é selecionado para transformar o seu momento de 
+                   autocuidado em uma experiência única e revigorante.
+                </p>
+            </div>
+
+            <div class="about-info">
+                <h3>Nosso <span>Compromisso</span></h3>
+                <p>
+                       Inspirar momentos de conexão e autoestima por meio do cuidado 
+                       diário com a pele e o corpo. Acreditamos que cada rotina de beleza 
+                       pode aproximar você de sua melhor versão, despertar a confiança e transformar 
+                       hábitos simples em rituais de puro bem-estar. <span>Nossa missão</span> 
+                       é oferecer a máxima qualidade em maquiagens, perfumaria e cremes hidratantes, 
+                       proporcionando experiências de luxo acessível que tornem o seu dia 
+                       mais leve, sofisticado e especial.
+                </p>
+            </div>
+        </div>
+       </section>
+
+       <section id="products">
+        <h2 class="title">Novidades</h2>
+
+        <div class="products-cards">
+            <div class="product-card">
+                <img src="https://images.tcdn.com.br/img/img_prod/1349542/paleta_de_sombras_mari_maria_makeup_nude_1_20260526154950_c22f7f6909b8.png" alt="Paleta Mari Maria">
+                <div class="product-content">
+                    <h3>Paleta <span>Mari Maria</span></h3>
+                </div>
+            </div>
+        
+            <div class="product-card">
+                <img src="https://epocacosmeticos.vteximg.com.br/arquivos/ids/420656-800-800/batom-acetinado-dior-rouge-dior-lip-color-satin-080-7.jpg?v=639017638494100000" alt="Batom Dior">
+                <div class="product-content">
+                    <h3>Batom <span>Dior Rouge</span></h3>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://vilabrasil.com.br/wp-content/uploads/2024/10/perfume_miss_dior_absolutely_blooming_100ml_edp_3348901300049-600x600.jpg" alt="Miss Dior">
+                <div class="product-content">
+                    <h3>Miss Dior <span>Absolutely Blooming</span></h3>
+                </div>
+            </div>
+        </div>
+       </section>
+    </main>
+
+    <footer>
+        <p>
+            Copyright 2026 FLORA Cosméticos <i class="fa-regular fa-copyright"></i>
+            Feito por Equipe FLORA
+        </p>
+    </footer>
+</body>
+</html>
