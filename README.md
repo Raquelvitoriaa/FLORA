@@ -26,7 +26,7 @@ O **FLORA** é um projeto desenvolvido com o objetivo de praticar conceitos de:
 - Design UI/UX
 - Landing Pages Comerciais
 
-O projeto simula uma marca premium de cosméticos focada em skincare, maquiagem e cuidados com a pele.
+> O projeto simula uma marca premium de cosméticos focada em skincare, maquiagem e cuidados com a pele.
 
 ---
 
