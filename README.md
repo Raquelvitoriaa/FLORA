@@ -14,7 +14,7 @@ Uma landing page moderna e elegante para uma marca fictícia de cosméticos, ski
 
 ---
 
-## 📖 Sobre o Projeto
+## Sobre o Projeto
 
 O **FLORA** é um projeto desenvolvido com o objetivo de praticar conceitos de:
 
@@ -30,7 +30,7 @@ O projeto simula uma marca premium de cosméticos focada em skincare, maquiagem 
 
 ---
 
-## 🎨 Layout
+## Layout
 
 ### Home Page
 
@@ -43,7 +43,7 @@ O projeto simula uma marca premium de cosméticos focada em skincare, maquiagem 
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 <div align="center">
 
@@ -66,21 +66,21 @@ O projeto simula uma marca premium de cosméticos focada em skincare, maquiagem 
 
 ---
 
-## ✨ Funcionalidades
+## Funcionalidades
 
-✔️ Layout Moderno
+- [x] Layout Moderno
 
-✔️ Design Responsivo
+- [x] Design Responsivo
 
-✔️ Seção de Produtos
+- [x] Seção de Produtos
 
-✔️ Hero Section Profissional
+- [x] Hero Section Profissional
 
-✔️ Cards Interativos
+- [x] Cards Interativos
 
-✔️ Interface Inspirada em E-commerce de Cosméticos
+- [x] Interface Inspirada em E-commerce de Cosméticos
 
-✔️ Navegação Intuitiva
+- [x] Navegação Intuitiva
 
 ---
 
